@@ -4,7 +4,7 @@ ENV PSModulePath /usr/local/share/powershell/Modules:/opt/microsoft/powershell/7
 
 RUN pwsh -c install-module -name pester -force
 
-COPY ../arm-ttk/ /usr/local/share/powershell/Modules/arm-ttk/
+COPY arm-ttk/ /usr/local/share/powershell/Modules/arm-ttk/
 
 
 ADD entrypoint.ps1 /entrypoint.ps1
