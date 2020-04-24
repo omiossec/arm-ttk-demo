@@ -37,3 +37,11 @@ Copy-Item -Path .\testcases\version-should-be-a-number.test.ps1 -Destination .\a
 
 Test-AzTemplate -TemplatePath "armfiles/azuredeploy.json"
 ```
+
+# GitHub 
+
+Docker + Workflow https://github.com/omiossec/arm-ttk-demo
+
+# Azure DevOps 
+
+Pipeline https://dev.azure.com/DEMOOM/Demo-arm-ttk/_build
