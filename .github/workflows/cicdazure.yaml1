@@ -1,0 +1,17 @@
+name: docker-Azure-cicd
+
+on: [push]
+
+jobs:
+  test:
+    name: arm-template
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: test-jobs
+        uses: ./pstests
+        with:
+          directory: armfiles
+          template: azuredeploy.json
+
