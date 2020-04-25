@@ -13,4 +13,4 @@ Thanks to all the communities
 
 And Microsoft France
 
-And all Team behind this event 
+And the Team behind this event
