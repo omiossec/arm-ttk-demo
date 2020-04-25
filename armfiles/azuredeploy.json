@@ -1,6 +1,6 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "A1",
+    "contentVersion": "0.0.0.1",
     "parameters": {
         "functionAppName": {
             "type": "string",
@@ -23,13 +23,7 @@
                 "description": "Specify the location for the function application resources"
               }
         },
-        "ApplicationInsightsLocation": {
-            "type": "string",
-            "defaultValue": "North Europe",
-            "metadata": {
-              "description": "Specify the region for Application Insights data"
-            }
-          },
+
         "runtimeStack": {
             "type": "string",
             "defaultValue": "powershell",
@@ -54,9 +48,7 @@
     "variables": {
         "hostingPlanName": "[concat(parameters('functionAppName'), '-plan')]",
         "storageAccountName": "[concat('stofunc', uniquestring(resourceGroup().id))]",
-        "BlobContainerName": "logs",
-        "GithubUri": "https://github.com/omiossec/StartStopVmByTag",
-        "prodbranch": "master"
+        "BlobContainerName": "logs"
     },
     "resources": [
         {
@@ -127,7 +119,7 @@
             "name": "[variables('storageAccountName')]",
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2018-07-01",
-            "location": "NorthEurope",
+            "location": "[parameters('location')]",
             "kind": "StorageV2",
             "sku": {
                 "name": "Standard_LRS",
